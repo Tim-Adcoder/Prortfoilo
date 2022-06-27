@@ -1,0 +1,61 @@
+/**
+ * Getting Started Git Commands.
+ * Author : Kartik panchal. 
+ */
+
+git config user.name "(type username you want to set)"   --> Sets username for that particular project only.
+git config --global user.name "(type username you wnat to set)"   --> Sets username globally for all.
+git config user.email "(type email you want to set)"   --> Sets email for that particular project only.
+git config --global user.email "(type email you want to set)"   --> Sets email globally for all.
+git config user.name   --> logs username.
+git config user.name   --> logs email.  
+
+git init   --> Initialise empty git repo in local storage. And create hidden .git folder.
+
+git status   --> Shows tracked and untracked files.
+
+git add (filename)   --> Add file in staging area.
+git add .  or git add -(a or A) --> Add all files in staging area.
+
+git rm --cached (filename)   --> Unstage file.
+git rm -f  (filename)   --> Deletes file.
+
+git commit -m "(Message of commit eg. First Commit)"   -->Takes snapshot of files.
+git log   -->Logs recent Commits.
+
+***How to connect local repo with remote repo created on github.
+git remote add origin (link of git repo eg. "https://github.com/MrBucks07/(repo name).git")
+
+git branch -M main   --> Set default branch as main.Because from 2019 changes default branch in github is main and in git default branch is master.
+
+git remote   --> Shows the the origin,
+git remote -v  --> Shows the origin url
+
+git push -u origin main   --> Pushes code from local to remote server.
+git pull origin main   --> Pulls code from remote server to local.
+
+***When we create repo on github with readme file,we have to rebase repo to push code from local repo.
+We have to pull that repo first and then push it again.
+git pull --rebase origin main
+
+***If we want to add some code and we are not sure that it will work then,
+1.Create new branch.
+git branch   --> Shows all branches present.
+git branch (branch name)   --> Creates new branch.
+
+2.Move to that branch.
+git checkout (branch name)   --> Switch to the branch specified.
+
+3.Modify or add some code and then commit and push it to remote.
+--use above adding,commiting and pushing commands.
+
+4.If that modified code works fine merge with main branch.
+(first checkout to main branch)
+git merge (branch name you want to merge)   --> Merges branch to main.
+
+5.And you want to delete that branch (optional).
+git branch -(d or D) (branch name)   --> Deletes branch from local specified.
+git push origin --delete (branchname)   -->Deletes branch from remote specified.
+
+***More advanced Commands on this link.
+https://gist.github.com/davfre/8313299
